@@ -1,0 +1,44 @@
+entity SkinCare {
+	productName String
+    targetProblem String
+    primaryIngredient String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Cabinet {
+	skinCareName String
+    }
+
+
+entity ProductDirectory {
+	product String
+    productBrand String
+    primaryIngredient String
+}
+
+entity ProductFeed {
+	itemName String
+}
+
+entity Comments {
+	product String
+	date LocalDate
+    comment String
+    image ImageBlob
+}
+
+
+relationship OneToOne {
+	Cabinet{user(login)} to User
+    SkinCare to ProductFeed{skincare(productname)}
+}
+
+relationship OneToMany {
+    Cabinet to SkinCare{cabinet(skincarename)}
+    ProductFeed to Comments{productfeed(itemname)}
+}
+
+relationship ManyToOne {
+	ProductDirectory to Cabinet{productdirectory(productname)}
+}

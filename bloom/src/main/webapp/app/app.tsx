@@ -51,6 +51,7 @@ export const App = () => {
           />
         </ErrorBoundary>
         <div className="container-fluid view-container" id="app-view-container">
+        <p>Hey there</p>
           <Card className="jh-card">
             <ErrorBoundary>
               <AppRoutes />

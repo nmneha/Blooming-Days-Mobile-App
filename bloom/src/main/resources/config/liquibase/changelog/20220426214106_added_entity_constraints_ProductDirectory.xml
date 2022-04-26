@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity ProductDirectory.
+    -->
+    <changeSet id="20220426214106-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="product_directory_id"
+                                 baseTableName="rel_product_directory__cabinet"
+                                 constraintName="fk_rel_product_directory__cabinet__product_directory_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_directory"/>
+
+        <addForeignKeyConstraint baseColumnNames="cabinet_id"
+                                 baseTableName="rel_product_directory__cabinet"
+                                 constraintName="fk_rel_product_directory__cabinet__cabinet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cabinet"/>
+    </changeSet>
+</databaseChangeLog>

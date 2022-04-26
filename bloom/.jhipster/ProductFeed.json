@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220426214108",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product_feed",
+  "fields": [
+    {
+      "fieldName": "product",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "target",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "primaryConcern",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ProductFeed",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "comments",
+      "otherEntityRelationshipName": "productFeed",
+      "relationshipName": "comments",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "productFeed",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cabinet",
+      "otherEntityRelationshipName": "productfeed",
+      "ownerSide": false,
+      "relationshipName": "cabinet",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

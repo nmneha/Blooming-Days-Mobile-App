@@ -3,7 +3,7 @@ import './home.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Translate } from 'react-jhipster';
-import { Row, Col, Alert } from 'reactstrap';
+import { Row, Col, Alert, Button } from 'reactstrap';
 
 import { useAppSelector } from 'app/config/store';
 
@@ -16,22 +16,26 @@ export const Home = () => {
         <span className="hipster rounded" />
       </Col>
       <Col md="9">
-        <h2>
-         Blooming Days
-        </h2>
-        <p className="lead">
-          Skin Care Tracker
-        </p>
         {account?.login ? (
           <div>
-            <Alert color="success">
-              <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
-                You are logged in as user {account.login}.
-              </Translate>
-            </Alert>
+            <h2>
+              Hello, {account.login}.
+            </h2>
+            <p className="lead">
+               May your skin bloom :)
+            </p>
+            <p>
+              <Button tag={Link} to="/cabinet">Cabinet</Button>
+            </p>
+            <p>
+              <Button tag={Link} to="/product-directory">Product Diretory</Button>
+            </p>
           </div>
         ) : (
           <div>
+            <h2>
+              Welcome to Blooming Days Skin Care Tracker
+            </h2>
             <Alert color="warning">
               <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
 
@@ -59,3 +63,14 @@ export const Home = () => {
 };
 
 export default Home;
+
+/*
+
+  <Alert color="success">
+    <Translate contentKey="home.logged.message" interpolate={{ username: account.login }}>
+      You are logged in as user {account.login}.
+    </Translate>
+  </Alert>
+
+     ^^insert line 30 if need
+*/

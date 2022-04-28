@@ -48,6 +48,13 @@ public class CacheConfiguration {
             createCache(cm, com.nusera.bloom.domain.User.class.getName());
             createCache(cm, com.nusera.bloom.domain.Authority.class.getName());
             createCache(cm, com.nusera.bloom.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.nusera.bloom.domain.ProductDirectory.class.getName());
+            createCache(cm, com.nusera.bloom.domain.Cabinet.class.getName());
+            createCache(cm, com.nusera.bloom.domain.Cabinet.class.getName() + ".productfeeds");
+            createCache(cm, com.nusera.bloom.domain.Cabinet.class.getName() + ".productdirectories");
+            createCache(cm, com.nusera.bloom.domain.ProductFeed.class.getName());
+            createCache(cm, com.nusera.bloom.domain.ProductFeed.class.getName() + ".comments");
+            createCache(cm, com.nusera.bloom.domain.Comments.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
